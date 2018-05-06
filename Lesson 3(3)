@@ -14,7 +14,7 @@ namespace ConsoleApplication3
             int RectK = 0;
             int z = 1;
             int Prob = N-1;
-            for (int i=0;i<a;i++)
+            for (int i=0;i<N;i++)
             {
                 for (int j = Prob; j != 0; j--)
                     Console.Write(" ");
