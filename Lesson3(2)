@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("A=");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("B=");
+            int b = Convert.ToInt32(Console.ReadLine());
+            if (a == b)
+            {
+                Console.WriteLine("Ошибка ввода диапазона значений! A=B.");
+            }
+            else if (a > b)
+            {
+                int t = a;
+                a = b;
+                b = t;
+                int Sum = 0;
+
+                while (a != b)
+                {
+                    if (a % 2 != 0)
+                        Sum += a;
+                    a++;
+                }
+                Console.WriteLine("Сумма нечетных чисел =" + Sum);
+            }
+            else
+            {
+                int Sum = 0;
+
+                while (a != b)
+                {
+                    if (a % 2 != 0)
+                        Sum += a;
+                    a++;
+                }
+                Console.WriteLine("Сумма нечетных чисел =" + Sum);
+            }
+            Console.ReadLine();
+        }
+    }
+}
