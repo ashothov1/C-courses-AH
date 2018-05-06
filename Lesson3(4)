@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = Convert.ToInt32(Console.ReadLine());
+            if (N != 0)
+            {
+                string[] Surnames = new string[N];
+                int[] Ages = new int[N];
+                
+                for (int i = 0; i < N; i++)
+                {
+                    Console.WriteLine("Введите фамилию и возраст клиента №" + (i + 1));
+                    Surnames[i] = Console.ReadLine();
+                    Ages[i] = Convert.ToInt32(Console.ReadLine());
+
+                }
+                int Min=Ages[0];
+                int Max=Ages[0];
+                int IMin = 0;
+                int IMax = 0;
+                for (int i = 0; i < N; i++)
+                {
+                    if (Min>Ages[i])
+                    {
+                        Min = Ages[i];
+                        IMin = i;
+                    }
+                    if (Max<Ages[i])
+                    {
+                        Max = Ages[i];
+                        IMax = Ages[i];
+                    }
+                }
+                Console.WriteLine("Самый молодой клиент - " + Surnames[IMin] + Ages[IMin]);
+                Console.WriteLine("Самый взрослый клиент - " + Surnames[IMax] + Ages[IMax]);
+            }
+            Console.ReadLine();
+        }
+    }
+}
