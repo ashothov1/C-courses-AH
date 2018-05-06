@@ -10,15 +10,15 @@ namespace ConsoleApplication3
     {
         static void Main(string[] args)
         {
-            int a=Convert.ToInt32(Console.ReadLine());
+            int N=Convert.ToInt32(Console.ReadLine());
             int RectK = 0;
             int z = 1;
-            int m = a-1;
+            int Prob = N-1;
             for (int i=0;i<a;i++)
             {
-                for (int j = m; j != 0; j--)
+                for (int j = Prob; j != 0; j--)
                     Console.Write(" ");
-                m--;
+                Prob--;
                 while (RectK != z)
                 {
                     Console.Write("^");
