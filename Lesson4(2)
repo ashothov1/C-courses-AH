@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const int N = 10;
+            int[] mas = new int[N];
+            Random xmas=new Random();
+            for (int i=0;i<N;i++)
+            {
+                mas[i] = xmas.Next(1, 50);
+                Console.Write("Mas[" + i + "]=" + mas[i] + " ");
+            }
+            Console.WriteLine();
+            int max=0;
+            int min=mas[0];
+            for (int i = 0; i < N; i++)
+            {
+                if (max < mas[i])
+                    max = mas[i];
+                if (min > mas[i])
+                    min = mas[i];
+            }
+            Console.WriteLine("Минимальное значение массива ="+min);
+            Console.WriteLine("Максимальное значение массива =" + max);
+            Console.WriteLine("Среднее значение максимального и среднего элементов =" + ((max+min)/2));
+            Console.ReadLine();
+        }
+    }
+}
