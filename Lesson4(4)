@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] mas = { 1, 2, 4, 3, 2, 1 };
+            
+                int N = mas.Length / 2;
+                int K = 0;
+                int j = mas.Length-1;
+                for (int i = 0; i <N; i++)
+                {
+                    if (mas[i] == mas[j])
+                        K++;
+                    j--;
+                }
+            if (K == N)
+                Console.WriteLine("Массив является палиндромом.");
+            else
+                Console.WriteLine("Массив не является палиндромом.");
+            Console.ReadLine();
+        }
+    }
+}
