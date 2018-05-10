@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const int N = 10;
+            int[] mas = new int[N];
+            Random xmas=new Random();
+            for (int i=0;i<N;i++)
+            {
+                mas[i] = xmas.Next(1, 50);
+                Console.Write("Mas[" + i + "]=" + mas[i] + " ");
+            }
+            int K = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            if (K <= N)
+            {
+                int nul = 0;
+                for (int j = 0; j != K; j++)
+                {
+                    for (int i = N - 1; i != 0; i--)
+                        mas[i] = mas[i - 1];
+                    mas[nul] = 0;
+                    nul++;
+                }
+                for (int i = 0; i < N; i++)
+                {
+                    Console.Write("Mas[" + i + "]=" + mas[i] + " ");
+                }
+            }
+            else
+                Console.WriteLine("Число сдвига превышает кол-во элементов массива! Сдвиг невозможен.");
+            Console.ReadLine();
+        }
+    }
+}
