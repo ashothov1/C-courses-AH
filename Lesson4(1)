@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] mas = new int[10];
+            Random xmas=new Random();
+            for (int i=0;i<10;i++)
+            {
+                mas[i] = xmas.Next(1, 50);
+                Console.Write("Mas[" + i + "]=" + mas[i] + " ");
+            }
+            Console.WriteLine();
+            for (int i = 9; i != -1; i--)
+            {
+                Console.Write("Mas[" + i + "]=" + mas[i] + " ");
+            }
+            Console.ReadLine();
+        }
+    }
+}
