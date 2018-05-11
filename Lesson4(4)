@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace ConsoleApplication5
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] mas = { 1, 2, 4, 3, 2, 1 };
-            
-                int N = mas.Length / 2;
-                int K = 0;
-                int j = mas.Length-1;
-                for (int i = 0; i <N; i++)
+            int[] mas = { 1, 2, 4, 3,4, 2, 1 };
+
+            int N = mas.Length / 2;
+            int K = 0;
+            int j = mas.Length - 1;
+            while (K != N)
+            {
+                if (mas[K] != mas[j])
                 {
-                    if (mas[i] == mas[j])
-                        K++;
-                    j--;
+                    Console.WriteLine("Массив не является палиндромом.");
+                    Console.ReadLine();
+                    return;
                 }
-            if (K == N)
-                Console.WriteLine("Массив является палиндромом.");
-            else
-                Console.WriteLine("Массив не является палиндромом.");
+                K++;
+                j--;
+            }
+            Console.WriteLine("Массив является палиндромом."); 
             Console.ReadLine();
         }
     }
