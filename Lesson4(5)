@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] mas1 = { 1, 2, 4, 3, 2, 1 };
+            int[] mas2 = { 3, 1, 2, 4, 2, 1 };
+            if (mas1.Length == mas2.Length)
+            {
+                int n = mas1.Length;
+                int[] check = new int[n];
+                int k=0;
+                for (int i = 0; i < mas1.Length; i++)
+                    for (int j = 0; j < n; j++)
+                        if (mas1[i] == mas2[j])
+                        {
+                            k++;
+                            for (int ident=j;ident<n-1;ident++)
+                            {
+                                mas2[ident] = mas2[ident + 1];
+                            }
+                            n--;
+                            break;
+                        }
+
+                if (k == mas1.Length)
+                    Console.WriteLine("True");
+                else
+                    Console.WriteLine("False");
+            } else Console.WriteLine("False"); 
+            Console.ReadLine();
+        }
+        
+
+
+    }
+    }
