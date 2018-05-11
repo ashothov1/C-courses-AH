@@ -13,30 +13,28 @@ namespace ConsoleApplication5
             const int N = 10;
             int[] mas = new int[N];
             Random xmas=new Random();
+            Console.WriteLine("Значения исходного массива Мas");
             for (int i=0;i<N;i++)
             {
                 mas[i] = xmas.Next(1, 50);
-                Console.Write("Mas[" + i + "]=" + mas[i] + " ");
+                Console.Write(mas[i] + " ");
             }
-            int K = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
-            if (K <= N)
+            Console.Write("Введите число позиций для сдвига:");
+            int K = Convert.ToInt32(Console.ReadLine());
+            int t=0;
+            for (int i = 0; i < K; i++)
             {
-                int nul = 0;
-                for (int j = 0; j != K; j++)
-                {
-                    for (int i = N - 1; i != 0; i--)
-                        mas[i] = mas[i - 1];
-                    mas[nul] = 0;
-                    nul++;
-                }
-                for (int i = 0; i < N; i++)
-                {
-                    Console.Write("Mas[" + i + "]=" + mas[i] + " ");
-                }
+                t = mas[mas.Length-1];
+                for (int j = mas.Length -1; j !=0 ; j--)
+                    mas[j] = mas[j-1];
+                mas[0] = t;
             }
-            else
-                Console.WriteLine("Число сдвига превышает кол-во элементов массива! Сдвиг невозможен.");
+            Console.WriteLine("Значения сдвинутого массива Мas");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write(mas[i] + " ");
+            }
             Console.ReadLine();
         }
     }
